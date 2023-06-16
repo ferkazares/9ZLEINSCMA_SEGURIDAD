@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicio de Cifrado</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="ranita.png" type="image/x-icon">
+    <script src="criptografia.js"></script>
+</head>
+<body>
+    <h1>Servicio de Cifrado</h1>
+    
+    <div class="input-container">
+        <label for="message">Mensaje:</label>
+        <input type="text" id="message" />
+    </div>
+    
+    <div class="input-container">
+        <label for="key">Clave:</label>
+        <input type="text" id="key" />
+    </div>
+    
+    <div class="input-container">
+        <label for="encryptionType">Tipo de cifrado:</label>
+        <select id="encryptionType">
+            <option value="cesar">César</option>
+            <option value="vigenere">Vigenère</option>
+        </select>
+    </div>
+    
+    <div class="button-container">
+        <button onclick="encrypt()" class="heart-button" title="Cifrar">Cifrar</button>
+        <button onclick="decrypt()" class="heart-button" title="Descifrar">Descifrar</button>
+    </div>
+    
+    <div class="result-container">
+        <label for="result">Resultado:</label>
+        <textarea id="result" rows="4" cols="50" readonly></textarea>
+    </div>
+</body>
+</html>
