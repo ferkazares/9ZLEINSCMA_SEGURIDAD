@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Algoritmo DES</title>
   <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
   <div class="container">
-    <h2 class="mt-4">Cifrado y descifrado de mensajes</h2>
+    <h2 class="mt-4">ALGORITMO DES</h2>
 
     <div class="form-group">
       <label for="clave">Clave (8 caracteres):</label>
@@ -37,7 +39,7 @@
       var archivo = document.getElementById("archivo").files[0];
       var lector = new FileReader();
 
-      lector.onload = function(e) {
+      lector.onload = function (e) {
         var contenido = e.target.result;
         var mensajeCifrado = CryptoJS.AES.encrypt(contenido, clave).toString();
         document.getElementById("mensajeCifrado").innerText = mensajeCifrado;
@@ -54,4 +56,5 @@
     }
   </script>
 </body>
+
 </html>
