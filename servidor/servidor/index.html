@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Algoritmo DES</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="mt-4">Cifrado y descifrado de mensajes</h2>
+
+    <div class="form-group">
+      <label for="clave">Clave (8 caracteres):</label>
+      <input type="text" class="form-control" id="clave" maxlength="8" required>
+    </div>
+
+    <div class="form-group">
+      <label for="archivo">Seleccionar archivo:</label>
+      <input type="file" class="form-control-file" id="archivo" accept=".txt">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" onclick="cifrar()">Cifrar</button>
+      <button class="btn btn-primary" onclick="descifrar()">Descifrar</button>
+    </div>
+
+    <h3 class="mt-4">Mensaje Cifrado:</h3>
+    <div id="mensajeCifrado"></div>
+
+    <h3 class="mt-4">Mensaje Descifrado:</h3>
+    <div id="mensajeDescifrado"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+  <script>
+    function cifrar() {
+      var clave = document.getElementById("clave").value;
+      var archivo = document.getElementById("archivo").files[0];
+      var lector = new FileReader();
+
+      lector.onload = function(e) {
+        var contenido = e.target.result;
+        var mensajeCifrado = CryptoJS.AES.encrypt(contenido, clave).toString();
+        document.getElementById("mensajeCifrado").innerText = mensajeCifrado;
+      };
+
+      lector.readAsText(archivo);
+    }
+
+    function descifrar() {
+      var clave = document.getElementById("clave").value;
+      var mensajeCifrado = document.getElementById("mensajeCifrado").innerText;
+      var mensajeDescifrado = CryptoJS.AES.decrypt(mensajeCifrado, clave).toString(CryptoJS.enc.Utf8);
+      document.getElementById("mensajeDescifrado").innerText = mensajeDescifrado;
+    }
+  </script>
+</body>
+</html>
