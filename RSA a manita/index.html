@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSA</title>
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Algoritmo RSA</h1>
+
+    <div class="form-group">
+      <label for="p-input">Primo p:</label>
+      <input type="text" class="form-control" id="p-input" placeholder="Ingrese un número primo de 4 dígitos">
+    </div>
+
+    <div class="form-group">
+      <label for="q-input">Primo q:</label>
+      <input type="text" class="form-control" id="q-input" placeholder="Ingrese otro número primo de 4 dígitos">
+    </div>
+
+    <button class="btn btn-primary" id="calcular-button">Calcular</button>
+
+    <div id="resultado-div" class="mt-3"></div>
+
+    <hr>
+
+    <div class="form-group">
+      <label for="e-input">Clave pública (e):</label>
+      <input type="text" class="form-control" id="e-input" placeholder="Ingrese un número para la clave pública">
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje-input">Mensaje:</label>
+      <input type="text" class="form-control" id="mensaje-input" placeholder="Ingrese el mensaje a cifrar o descifrar">
+    </div>
+
+    <button class="btn btn-primary" id="cifrar-button">Cifrar</button>
+    
+    <button class="btn btn-primary" id="descifrar-button">Descifrar</button>
+
+    <div id="resultado-div" class="mt-3"></div>
+  </div>
+
+  <script src="rsa.js"></script>
+</body>
+
+</html>
